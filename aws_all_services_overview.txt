@@ -1,0 +1,87 @@
+AWS Networking & Content Delivery Services - VPC, Direct Connect, Route 53, CloudFront
+• VPC - virtual private cloud ? Private internet service within cloud
+	○ Virtual Private Cloud is isolated cloud resources within AWS. Think of them as isolated Data centers.
+• Direct connect service - without internet - we can connect to aws
+	○ We get optical fibre type connection from our premises to aws
+	○ Ex. used for storage services to upload the daily backup which is in huge size for that direct line would help
+	○ Dedicated network connection to AWS. Way of connecting to AWS without the need of internet. Helps the data transport from and to the AWS infra and secure line.
+• Route53 dns service - we get internet domain for web app from isp and this service would redirect that url to our ec2 instances or where our web app is hosted on aws
+• CloudFront
+	○ Edge location is the place that caches the data.
+	○ Example: Your data is stored somewhere in US location, if someone from India wants to use your data, the data can be cached in Mumbai so that no need to pull data from US location
+
+AWS Compute Services - EC2, ECS, Lambda, Elastic BeanStalk
+• EC2 - elastic compute cloud for VM, Virtual Servers in the Cloud
+• ECS - Elastic container service - cluster of machine having docker installed in it, Run and manage docker(container virtualization) containers:--
+• Lambda service
+	○ up only when needed - lambda function configuration
+	○ Serverless deployment
+	○ Run the code without thinking/worrying about the servers. One of the powerful and expanding area AWS
+• Elastic BeanStalk - its PaaS
+	○ Run and manage web apps. For developer, just upload the code and Amazon does the validation and provisions resources for that requirement
+	○ Ex. we get python deployed environment directly we just need to write the code and deploy on it
+
+AWS Storage Services - S3, S3 Glacier, Storage Gateway, EFS
+• S3
+	○ simple storage service file system
+	○ It store under bucket, bucket is like table in rdbms
+	○ Faster access, its not for permanent storage, used where intermediate storage needed
+	○ Its object based file system where we can store any type of files or data
+• S3 Glacier
+	○ used when time is not constrain like in S3 continuous heat where in this case not continuous heat to storage
+	○ File archival place, data access takes 2-4 Hours retrieval time. Used as for backup. Secure and low cost storage option for data archive and long time backup.
+• Storage Gateway
+	○ Hybrid Storage integration.
+	○ The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+	○ for to store perm. store data, ex. regular day to day backup data
+• EFS
+	○ elastic file system - like linux file system
+	○ We can attach same fs to multiple ec2
+	○ Fully managed file system for EC2 instances. Block level storage. Think of it as NAS in the cloud for many EC2(Shared).
+
+AWS Migration & Transfer Services - Snowball, Database migration service, Server migration service
+• Snowball - Large scale data transfer. Use snowball appliance to move data to and from AWS cloud. Ex. when data is too much
+• DMS Database migration service - migrate db from on premise to aws or vice-versa, Easier and managed DB migration service.
+• Server migration service - migrate servers from on premise to aws or vice-versa. Migrate on-premises servers to AWS.
+
+AWS Database Services - RDS, DynamoDB, ElastiCache, Amazon Redshift
+• RDS -
+	○ Relational Database Services consisting of many DB’s( Oracle, posgresql, MySQL and so on) in the cloud
+	○ Managed Relational DB service. Manage the db like update db automatically, automatically commit changes
+• DynamoDB
+	○ Managed Nosql DB in AWS.
+	○ Non RDS.
+• ElastiCache
+	○ store the data in key-value format
+	○ In-memory cache to help the DB. Cache the data in Cloud to improve DB performance and to reduce DB load.
+• Amazon Redshift
+	○ big data warehouse, ex. informatica, teradata
+	○ Fast, simple, cost effective data warehousing solution from AWS.
+
+AWS Security & Identity, Compliance - IAM
+• IAM - Identity access module - to authenticate and authorize all users to provide particular permissions on aws console
+
+AWS Management Service - CloudWatch, CloudFormation, CloudTrail, CLI, OpsWorks, Trusted Advisor
+• CloudWatch: Monitor Resources and applications.
+• CloudFormation: Create and manage resources with templates.
+• CloudTrail: Track user activity and API usage.
+• CLI - replacement tool of GUI, do the same operations using cli in automation way
+• OpsWorks: Automate operations using Chef.
+• Trusted Advisor: Optimize performance and security(Free tier and enterprise tiers).
+
+AWS Messaging Services - SES, SQS, SNS
+• SES
+• SQS
+• SNS
+
+AWS Developer Tools
+• CodeCommit: Store code in private git repo.
+• CodeBuild: Build and Test code(code compilations).
+• CodeDeploy: Automate code deployments.
+• CodePipeline: Release software using Continuous Delivery(CD)
+
+AWS Console
+• URL which shows when login to aws console having region in it through which we can identify that on which region we're logged in and our work goes on where
+https://console.aws.amazon.com/console/home?region=us-east-1
+But with this region we may face latency due to which we can change the region from console page and whichever then selected will become our working region then ex
+https://ap-south-1.console.aws.amazon.com/console/home?region=ap-south-1#
